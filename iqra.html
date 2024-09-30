@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let cartCount = 0;
+
+            // Filter function for the search input
+            $("input.form-control").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $(".card").filter(function() {
+                    $(this).toggle($(this).find(".card-title").text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+
+            // Add to Cart button click function
+            $(".add-to-cart-btn").on("click", function() {
+                cartCount++;
+                $("#cart-count").text(cartCount);
+            });
+        });
+    </script>
+    <style>
+        .divContainer {
+            font-family: Arial, sans-serif;
+            border: 1px solid #dddddd;
+            padding: 10px;
+            margin: 5px;
+        }
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cart-icon">
+    <span class="fa fa-shopping-cart"></span>
+    <span id="cart-count">0</span>
+</div>
+
+<div class="a3">
+    <div class="container px-4">
+        <div class="d-flex align-items-center justify-content-between pt-5">
+            <h1 class="n" style="color: tomato;">Products</h1>
+            <input type="text" class="form-control" placeholder="Search Products">
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                Category
+            </button>
+        </div>
+
+        <div class="row gx-5 justify-content-evenly gy-5 mt-1">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+                <div class="card border-light mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">Bed</h5>
+                            <h5 class="pr-2">$40</h5>
+                        </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+                <div class="card border-light mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">Sofa</h5>
+                            <h5 class="pr-2">$40</h5>
+                        </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+                <div class="card border-light mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">Dining</h5>
+                            <h5 class="pr-2">$40</h5>
+                        </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+                <div class="card border-light mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">Kitchen</h5>
+                            <h5 class="pr-2">$40</h5>
+                        </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+                <div class="card border-light mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">Lounge</h5>
+                            <h5 class="pr-2">$40</h5>
+                        </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
